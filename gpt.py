@@ -33,5 +33,9 @@ def chat():
         logging.error(f"Error: {e}")
         return jsonify({'error': 'Failed to fetch response from OpenAI'}), 500
 
+@app.route('/', methods=['GET'])
+def home():
+    return "Server is running!", 200
+
 if __name__ == '__main__':
     app.run(debug=True)
